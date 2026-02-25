@@ -17,56 +17,56 @@ const BOOTCAMPS: BootcampItem[] = [
     id: 1,
     title: "Web Development Basics",
     description: "Learn HTML, CSS, and JS fundamentals.",
-    image: "https://via.placeholder.com/560x320.png?text=Bootcamp+1",
+    image: bootcampImg,
     type: "full-day",
   },
   {
     id: 2,
     title: "React Intensive",
     description: "State management, hooks, and routing.",
-    image: "https://via.placeholder.com/560x320.png?text=Bootcamp+2",
+    image: bootcampImg,
     type: "night",
   },
   {
     id: 3,
     title: "UI/UX Foundations",
     description: "Design thinking and prototyping basics.",
-    image: "https://via.placeholder.com/560x320.png?text=Bootcamp+3",
+    image: bootcampImg,
     type: "full-day",
   },
   {
     id: 4,
     title: "Backend Essentials",
     description: "Node.js, REST APIs and databases.",
-    image: "https://via.placeholder.com/560x320.png?text=Bootcamp+4",
+    image: bootcampImg,
     type: "night",
   },
   {
     id: 5,
     title: "Fullstack Project",
     description: "Build and deploy a fullstack app.",
-    image: "https://via.placeholder.com/560x320.png?text=Bootcamp+5",
+    image: bootcampImg,
     type: "full-day",
   },
   {
     id: 6,
     title: "Testing & QA",
     description: "Automated testing with Jest and Playwright.",
-    image: "https://via.placeholder.com/560x320.png?text=Bootcamp+6",
+    image: bootcampImg,
     type: "night",
   },
   {
     id: 7,
     title: "Performance Optimization",
     description: "Improve web performance and monitoring.",
-    image: "https://via.placeholder.com/560x320.png?text=Bootcamp+7",
+    image: bootcampImg,
     type: "full-day",
   },
   {
     id: 8,
     title: "Career Prep",
     description: "Interview prep, resumes, and portfolios.",
-    image: "https://via.placeholder.com/560x320.png?text=Bootcamp+8",
+    image: bootcampImg,
     type: "night",
   },
 ];
@@ -138,17 +138,18 @@ const Bootcamp: React.FC = () => {
           <Card
             key={b.id}
             data-aos="fade-up"
-            className="overflow-hidden border border-gray-200 hover:shadow-md transition duration-300"
+            style={{ background: basecolor.grey }}
+            className="relative mx-auto w-full max-w-sm pt-0 rounded-lg"
           >
-            <div className="h-44 w-full overflow-hidden bg-slate-100">
+            <div className="relative aspect-video overflow-hidden">
               <img
-                src={bootcampImg}
+                src={b.image}
                 alt={b.title}
-                className="object-cover w-full h-full"
+                className="w-full h-full object-cover rounded-t-lg"
               />
             </div>
 
-            <CardContent className="p-4">
+            <CardContent className="p-4 text-center">
               <h3 className="text-lg font-semibold mb-1">{b.title}</h3>
               <p className="text-sm text-gray-600">{b.description}</p>
             </CardContent>

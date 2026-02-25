@@ -60,7 +60,10 @@ const Navbar: React.FC = () => {
                 PROGRAM
               </Link>
 
-              <Link to="#" className="flex items-center px-4 hover:opacity-90">
+              <Link
+                to="/layanan"
+                className="flex items-center px-4 hover:opacity-90"
+              >
                 LAYANAN
               </Link>
 
