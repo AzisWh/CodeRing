@@ -67,7 +67,10 @@ const Navbar: React.FC = () => {
                 LAYANAN
               </Link>
 
-              <Link to="#" className="flex items-center px-4 hover:opacity-90">
+              <Link
+                to="/tentang"
+                className="flex items-center px-4 hover:opacity-90"
+              >
                 TENTANG KAMI
               </Link>
 
