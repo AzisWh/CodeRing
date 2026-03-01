@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Kolaborasi = () => {
   const navigate = useNavigate();
   return (
-    <section className="relative w-full">
+    <section className="relative w-full" data-aos="fade-up">
       <div
         className="relative w-full bg-cover bg-center bg-no-repeat"
         style={{

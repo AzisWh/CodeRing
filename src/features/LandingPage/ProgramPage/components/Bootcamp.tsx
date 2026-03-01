@@ -141,11 +141,14 @@ const Bootcamp: React.FC = () => {
             style={{ background: basecolor.grey }}
             className="relative mx-auto w-full max-w-sm pt-0 rounded-lg"
           >
-            <div className="relative aspect-video overflow-hidden">
+            <div
+              className="relative aspect-video overflow-hidden p-4 rounded-t-lg"
+              style={{ backgroundColor: basecolor.darkBlue }}
+            >
               <img
                 src={b.image}
                 alt={b.title}
-                className="w-full h-full object-cover rounded-t-lg"
+                className="w-full h-full object-cover rounded-md"
               />
             </div>
 

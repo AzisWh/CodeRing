@@ -6,6 +6,7 @@ import Home from "@/pages/Landing/Home/Home";
 import Program from "@/pages/Landing/Program/Program";
 import Layanan from "@/pages/Landing/Layanan/Layanan";
 import TentangKami from "@/pages/Landing/TentangKami/TentangKami";
+import Portofolio from "@/pages/Landing/Portofolio/Portofolio";
 
 const LandingRoutes: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const LandingRoutes: React.FC = () => {
         <Route path="/program" element={<Program />} />
         <Route path="/layanan" element={<Layanan />} />
         <Route path="/tentang" element={<TentangKami />} />
+        <Route path="/portofolio" element={<Portofolio />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
