@@ -1,8 +1,8 @@
-Buatkan komponen Bootcamp.tsx menggunakan:
+Buatkan komponen Kegiatan.tsx menggunakan:
 
 React + TypeScript
 
-ShadCN UI (Card & Button sudah terinstall)
+ShadCN UI (Card sudah terinstall)
 
 TailwindCSS
 
@@ -10,152 +10,156 @@ Warna global ambil dari color.ts
 
 Gunakan data-aos="fade-up" untuk animasi card
 
-🎯 Requirements
-1️⃣ Data & Mapping
+🎯 Tujuan Layout
 
-Gunakan dummy data array berisi 8 bootcamp
+Buat halaman Berita & Kegiatan dengan struktur 2 kolom:
 
-Setiap object berisi:
+🟦 Kiri (Konten Utama – Card List + Pagination)
 
-id
+Berisi:
 
-title
+Title: "Berita & Kegiatan"
 
-description
+Subtitle kecil di bawahnya (contoh: Membuka Pengetahuan, Pikiran yang Menginspirasi)
 
-image
+Grid card berita (3 kolom di desktop)
 
-type → "full-day" atau "night"
+Pagination di bawah grid
 
-Render card menggunakan .map()
+⚠️ Layout kiri tidak benar-benar center split 50:50
 
-Jangan hardcode 8 card manual
+Konten kiri lebih dominan
 
-2️⃣ Layout Responsive
+Section kiri agak menjorok ke kanan
 
-Gunakan grid:
+Sidebar kanan lebih kecil (sekitar 25–30%)
 
-Desktop → grid-cols-4
+Gunakan shadcn/ui Card
 
-Tablet → grid-cols-2
+Data gunakan mapping array dummy
 
-Mobile → grid-cols-1
+Gunakan image:
 
-Contoh:
+import phpimg from "@/assets/img/php.png"
 
-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6
-3️⃣ Card Design (ShadCN)
-
-Gunakan:
-
-<Card>
-
-<CardContent>
-
-Struktur:
+Struktur card:
 
 Image di atas
 
-Title
+Kategori kecil (misal: Web Development)
 
-Description
+Tanggal di kanan
 
-Tambahkan:
+Judul artikel
 
-data-aos="fade-up"
+Deskripsi singkat
 
-di card root element.
+Warna biru gunakan:
 
-4️⃣ Filter Button (Di Atas Card)
+basecolor.DarkBlue
 
-Buat 2 button ShadCN:
+🟦 Kanan (Sidebar Category)
 
-Full-Day Bootcamp
+Title: Category
 
-Night Bootcamp
+List category vertikal dengan bullet biru
 
-Warna:
+Bullet gunakan warna basecolor.DarkBlue
 
-Orange (ambil dari color.ts)
+Contoh isi:
 
-Active state harus beda style
+Web Development
 
-Gunakan state:
+UI/UX
 
-const [filter, setFilter] = useState<"all" | "full-day" | "night">("all")
+Backend
 
-Logic:
+Graphic Design
 
-Klik button → filter card sesuai type
+Sidebar harus sticky di desktop (optional tapi recommended)
 
-5️⃣ Show More Logic (Penting ⚠️)
+📱 Responsiveness
 
-Gunakan state:
+Pastikan responsive:
 
-const [visibleCount, setVisibleCount] = useState(initialCount)
-Desktop:
+Desktop (lg)
 
-Tampilkan maksimal 8 card dulu
+Grid 3 kolom
 
-Jika total > 8 → tampilkan button:
-"Lihat Lebih Lengkap"
-warna darkblue (ambil dari color.ts)
+Layout 70% kiri / 30% kanan
 
-Klik → tampilkan semua card
+Tablet (md)
 
-Mobile:
+Grid 2 kolom
 
-Karena grid-1, tampilkan maksimal 4 card dulu
+Sidebar turun ke bawah
 
-Jika total > 4 → tampilkan button
+Mobile (sm)
 
-Klik → tampilkan semua
+Grid 1 kolom
 
-Gunakan responsive detection:
-Boleh pakai:
+Sidebar full width di bawah konten
 
-useEffect + window.innerWidth
-atau
+🎨 Styling Rules
 
-custom hook
+Gunakan TailwindCSS
 
-6️⃣ Button "Lihat Lebih Lengkap"
+Gunakan shadcn/ui untuk Card & Pagination
 
-Gunakan ShadCN Button:
+Jangan hardcode warna biru, gunakan:
 
-Variant custom
+basecolor.DarkBlue
 
-Background darkblue
+Tambahkan hover effect pada card (shadow / scale ringan)
 
-Text putih
+Gunakan spacing yang clean dan modern
 
-Full width di mobile
+📦 Data Dummy
 
-Centered di desktop
+Buat array dummy seperti:
 
-7️⃣ Animasi
+const articles = [
+  {
+    id: 1,
+    title: "Framework PHP Mana Yang Tepat",
+    category: "Web Development",
+    date: "29 Dec, 2025",
+    description: "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
+    image: phpimg
+  }
+]
 
-Setiap card harus memiliki:
+Mapping minimal 9 data agar terlihat 3 baris.
 
-data-aos="fade-up"
+📌 Pagination
 
-Pastikan AOS sudah di-init di root App.
+Buat pagination simple (1 2 3)
 
-8️⃣ Clean Code Rules
+Active page gunakan background basecolor.DarkBlue
 
-Jangan hardcode UI berulang
+Letakkan di bawah grid dan center
 
-Semua card dari array
+🧱 Struktur yang Diharapkan
+Container
+ ├── Header Section (Title + Subtitle)
+ ├── Grid Layout
+ │    ├── Left Content (Cards + Pagination)
+ │    └── Right Sidebar (Category)
+⚠️ Important
 
-Gunakan TypeScript interface
+Jangan ubah nama component
 
-Pisahkan dummy data di atas file
+Tetap gunakan:
 
-Responsive clean
+const Kegiatan = () => {}
+export default Kegiatan
 
-No inline color, semua dari color.ts
+Gunakan functional component
 
-💎 Expected Behaviour
-Device	Default Visible	Show More muncul jika
-Desktop	8 card	total > 8
-Mobile	4 card	total > 4
+Clean & production ready
+
+Modern UI
+
+Consistent spacing
+
+Buatkan full implementation code sesuai deskripsi di atas.
