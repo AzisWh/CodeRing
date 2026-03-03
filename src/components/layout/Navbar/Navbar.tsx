@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
               </Link>
 
               <Link
-                to="/hubungi"
+                to="/kontak"
                 className="flex items-center px-6 text-white font-semibold"
                 style={{ background: basecolor.orange }}
               >
