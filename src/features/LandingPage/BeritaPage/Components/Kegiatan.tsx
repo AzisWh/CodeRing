@@ -1,124 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { basecolor } from "@/constant/color";
-import phpimg from "@/assets/img/php.png";
+import { articles } from "../type/data";
 
 const ITEMS_PER_PAGE = 9;
-
-const articles = [
-  {
-    id: 1,
-    title: "Framework PHP Mana Yang Tepat",
-    category: "Web Development",
-    date: "29 Dec, 2025",
-    description:
-      "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
-    image: phpimg,
-  },
-  {
-    id: 2,
-    title: "Framework PHP Mana Yang Tepat",
-    category: "Web Development",
-    date: "29 Dec, 2025",
-    description:
-      "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
-    image: phpimg,
-  },
-  {
-    id: 3,
-    title: "Framework PHP Mana Yang Tepat",
-    category: "Web Development",
-    date: "29 Dec, 2025",
-    description:
-      "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
-    image: phpimg,
-  },
-  {
-    id: 4,
-    title: "Framework PHP Mana Yang Tepat",
-    category: "Web Development",
-    date: "29 Dec, 2025",
-    description:
-      "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
-    image: phpimg,
-  },
-  {
-    id: 5,
-    title: "Framework PHP Mana Yang Tepat",
-    category: "Web Development",
-    date: "29 Dec, 2025",
-    description:
-      "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
-    image: phpimg,
-  },
-  {
-    id: 6,
-    title: "Framework PHP Mana Yang Tepat",
-    category: "Web Development",
-    date: "29 Dec, 2025",
-    description:
-      "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
-    image: phpimg,
-  },
-  {
-    id: 7,
-    title: "Framework PHP Mana Yang Tepat",
-    category: "Web Development",
-    date: "29 Dec, 2025",
-    description:
-      "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
-    image: phpimg,
-  },
-  {
-    id: 8,
-    title: "Framework PHP Mana Yang Tepat",
-    category: "Web Development",
-    date: "29 Dec, 2025",
-    description:
-      "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
-    image: phpimg,
-  },
-  {
-    id: 9,
-    title: "Framework PHP Mana Yang Tepat",
-    category: "Web Development",
-    date: "29 Dec, 2025",
-    description:
-      "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
-    image: phpimg,
-  },
-  {
-    id: 10,
-    title: "Framework PHP Mana Yang Tepat",
-    category: "UI/UX",
-    date: "29 Dec, 2025",
-    description:
-      "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
-    image: phpimg,
-  },
-  {
-    id: 11,
-    title: "Framework PHP Mana Yang Tepat",
-    category: "Backend",
-    date: "29 Dec, 2025",
-    description:
-      "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
-    image: phpimg,
-  },
-  {
-    id: 12,
-    title: "Framework PHP Mana Yang Tepat",
-    category: "Graphic Design",
-    date: "29 Dec, 2025",
-    description:
-      "Berikut adalah panduan untuk memilih Framework PHP mana yang tepat untuk aplikasi Anda.",
-    image: phpimg,
-  },
-];
 
 const categories = ["Web Development", "UI/UX", "Backend", "Graphic Design"];
 
 const Kegiatan = () => {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(articles.length / ITEMS_PER_PAGE);
@@ -148,7 +39,10 @@ const Kegiatan = () => {
         <div className="flex-1 lg:w-[70%]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {paginatedArticles.map((article) => (
-              <div key={article.id}>
+              <div
+                key={article.id}
+                onClick={() => navigate(`/berita/${article.id}`)}
+              >
                 <Card
                   className="overflow-hidden border-0 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300 cursor-pointer gap-0 py-0"
                   style={{ backgroundColor: basecolor.lightGrey }}

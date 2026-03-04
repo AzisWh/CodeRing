@@ -4,6 +4,7 @@ export const basecolor = {
   orange: '#FF7805',
   greyBlue: '#929DB9 ',
   grey: "#F0F0F0",
+  lightgrey: "#F8F8F8",
   darkgrey: '#6B6A75',
   lightGrey: '#EEF3FF',
 }

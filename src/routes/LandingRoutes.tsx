@@ -8,7 +8,8 @@ import Layanan from "@/pages/Landing/Layanan/Layanan";
 import TentangKami from "@/pages/Landing/TentangKami/TentangKami";
 import Portofolio from "@/pages/Landing/Portofolio/Portofolio";
 import Berita from "@/pages/Landing/Berita/Berita";
-import KontakPage from "@/features/LandingPage/KontakPage/KontakPage";
+import Kontak from "@/pages/Landing/Kontak/Kontak";
+import BeritaDetail from "@/pages/Landing/Berita/BeritaDetail";
 
 const LandingRoutes: React.FC = () => {
   return (
@@ -20,7 +21,8 @@ const LandingRoutes: React.FC = () => {
         <Route path="/tentang" element={<TentangKami />} />
         <Route path="/portofolio" element={<Portofolio />} />
         <Route path="/berita" element={<Berita />} />
-        <Route path="/kontak" element={<KontakPage />} />
+        <Route path="/berita/:id" element={<BeritaDetail />} />
+        <Route path="/kontak" element={<Kontak />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
